@@ -27,6 +27,25 @@ import { Component } from '@angular/core';
       <option>green</option>
     </select>
   </fieldset>
+
+  <fieldset>
+    <button (click)="onAddressClick()">
+      Show / hide address
+    </button>
+
+    <div [hidden]="hideAddress">
+      <h2>{{ street }}</h2>
+      <p>City: {{ city }}</p>
+      <p>Region: {{ region }}</p>
+
+      <select (change)="regionChange($event.target.value)">
+        <option value="north">North</option>
+        <option value="east">East</option>
+        <option value="south">South</option>
+        <option value="west">West</option>
+      </select>
+    </div>
+  </fieldset>
   `,
 })
 
@@ -34,6 +53,19 @@ export class AppComponent  {
   name = 'Alex Smith';
   image = 'favicon.ico';
   color = 'red';
+  street = 'test street';
+  city = 'test city';
+  region = 'north';
+  hideAddress = false;
+
+  onAddressClick() {
+    this.hideAddress = !this.hideAddress;
+  }
+
+  regionChange(value: string) {
+    debugger;
+    this.region = value;
+  }
 
   clicked() {
     this.color = this.color === 'red' ? 'blue' : 'red';
