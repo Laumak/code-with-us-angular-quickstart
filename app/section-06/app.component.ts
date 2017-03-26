@@ -59,4 +59,5 @@ export class AppComponent {
   hideAddress = false;
 
   regions = ['East', 'Midwest', 'North', 'South', 'West'];
+  states  = ['California', 'Illianois', 'Jalisco', 'Quebec'];
 }

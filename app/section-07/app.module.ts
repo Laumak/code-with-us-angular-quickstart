@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }            from './app.component';
 import { CustomerDetailComponent } from './customer-detail.component';
 import { CustomerListComponent }   from './customer-list.component';
+import { AddressComponent }        from './address.component';
 
 @NgModule({
   imports: [                  // What stuff do I need?
@@ -14,7 +15,8 @@ import { CustomerListComponent }   from './customer-list.component';
   declarations: [             // What's in my app module?
     AppComponent,
     CustomerDetailComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    AddressComponent,
   ],
   bootstrap: [ AppComponent ] // Where do I start?
 })

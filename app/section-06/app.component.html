@@ -29,7 +29,7 @@
   <br>
   <label><input type="checkbox" [(ngModel)]="hideAddress"/>Hide address</label>
 
-  <div [hidden]="hideAddress">
+  <div *ngIf="!hideAddress">
     <h3>Address:</h3>
     <fieldset>
       <label>
@@ -47,9 +47,7 @@
       <label>
         State:
         <select [(ngModel)]="customer.address.state">
-          <option>California</option>
-          <option>Jalisco</option>
-          <option>Quebec</option>
+          <option *ngFor="let state of states">{{ state }}</option>
         </select>
       </label>
     </fieldset>
